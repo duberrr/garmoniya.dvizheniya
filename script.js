@@ -146,11 +146,16 @@ form.addEventListener('submit', async event => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
-    if (!response.ok) throw new Error('request failed');
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || result.ok === false) {
+      const vkError = result.error?.error_msg || result.error?.message || result.error || 'request failed';
+      throw new Error(String(vkError));
+    }
     form.reset();
     status.innerHTML = '<div class="success-box"><b>Спасибо!</b> Заявка отправлена. Мы скоро свяжемся с вами.</div>';
   } catch (error) {
-    status.innerHTML = '<div class="success-box"><b>Не получилось отправить заявку автоматически.</b> Пожалуйста, напишите нам во ВКонтакте или позвоните: +7 (909) 062-74-84.<br><a class="button button-small" href="https://vk.com/garmonia.dvizhenia" target="_blank" rel="noopener noreferrer">Написать во ВКонтакте ↗</a></div>';
+    console.error('Lead form error:', error);
+    status.innerHTML = `<div class="success-box"><b>Не получилось отправить заявку автоматически.</b> Причина: ${error.message}.<br>Пожалуйста, напишите нам во ВКонтакте или позвоните: +7 (909) 062-74-84.<br><a class="button button-small" href="https://vk.com/garmonia.dvizhenia" target="_blank" rel="noopener noreferrer">Написать во ВКонтакте ↗</a></div>`;
   } finally {
     submitButton.disabled = false;
     submitButton.innerHTML = 'Записаться <span>→</span>';
