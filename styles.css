@@ -111,3 +111,122 @@ section[id]{scroll-margin-top:var(--header-offset,120px)}
 /* Hover-подъём карточек диагностики. */
 .check-list li{transition:transform .32s var(--ease),box-shadow .32s var(--ease),background .32s var(--ease)}
 .check-list li:hover{transform:translateY(-8px);background:linear-gradient(145deg,rgba(255,255,255,.22),rgba(255,255,255,.09));box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 26px 46px rgba(0,0,0,.16)}
+
+/* Mobile polish only: плотный ритм, без пустых провалов и съезжаний. */
+@media (max-width:900px){
+  .container{width:min(100% - 34px,760px)}
+  .section{padding:72px 0}
+  .site-header{top:10px}
+  .header-inner{border-radius:22px}
+  .site-nav{gap:4px}
+  .site-nav a{border-radius:18px}
+  .reveal{transform:translateY(14px);transition-duration:.55s}
+  h2{font-size:clamp(38px,9vw,58px);line-height:1.02;letter-spacing:-.055em}
+  .eyebrow{margin-bottom:16px}
+  .split-layout,.diagnostic-layout,.signup-layout,.faq-layout{gap:34px}
+  .section-copy{max-width:none}
+  .section-copy>p{margin-bottom:14px}
+}
+
+@media (max-width:680px){
+  body{font-size:15px;line-height:1.62}
+  .container{width:min(100% - 28px,520px)}
+  .section{padding:58px 0}
+
+  .header-inner{height:60px;padding:7px 8px 7px 12px}
+  .brand{gap:8px;font-size:11px}
+  .brand-logo{width:40px;height:40px;flex-basis:40px}
+  .menu-toggle{width:44px;height:44px}
+  .site-nav{width:100vw;padding:92px 24px 38px}
+  .site-nav a{font-size:24px;font-weight:900;letter-spacing:-.04em}
+
+  .hero{min-height:820px;padding-top:82px}
+  .hero-inner{min-height:auto;align-items:flex-start}
+  .hero-copy{width:100%;padding:28px 0 330px}
+  .hero-brand-mark{width:78px;height:78px;margin-bottom:14px}
+  .hero h1{max-width:330px;margin-bottom:18px;font-size:clamp(56px,18vw,78px);line-height:.82;letter-spacing:-.08em}
+  .hero h2{margin-bottom:10px;font-size:21px;line-height:1.15}
+  .hero-text{max-width:330px;margin-bottom:22px;font-size:15px;line-height:1.55}
+  .hero-actions{gap:12px}
+  .hero-actions .button{width:100%;max-width:330px;min-height:52px;padding-inline:18px}
+  .text-link{font-size:13px}
+  .hero-photo-motion{right:-18%;bottom:0;width:128%;height:360px;border-radius:46% 46% 0 0/24% 24% 0 0}
+  .hero-photo-stage{height:100%;align-items:end}
+  .hero-child-photo{width:min(122%,610px);max-height:108%}
+  .hero-photo-motion:before{right:22%;bottom:6%;width:54%;height:12%}
+  .ribbon-hero{left:-88%;bottom:18%;width:270%;opacity:.82}
+  .hero:before{left:-72%;bottom:19%;width:132%;height:30%;opacity:.9}
+
+  .facts{grid-template-columns:1fr;gap:10px;margin-top:26px;padding-top:20px}
+  .facts li{padding:14px 16px;border-radius:20px;background:rgba(255,255,255,.58)}
+  .facts b{font-size:15px}
+
+  .massage-visual{min-height:340px;margin-top:6px}
+  img.massage-ball-main{right:2%;bottom:12%;width:210px}
+  img.massage-ball-small{top:12%;left:2%;width:124px}
+  img.massage-ball-green{right:34%;top:26%;width:96px}
+  .massage-orbit-one{right:-8%;bottom:9%;width:98%;height:45%}
+  .massage-orbit-two{top:5%;left:-10%;width:94%;height:50%}
+  .balance-pad{right:0;bottom:12%;width:88%}
+
+  .directions .section-heading{margin-bottom:28px}
+  .directions-layout{display:grid;gap:12px}
+  .direction-feature,.direction-list article,.diagnostic-card{margin:0;border-radius:26px}
+  .direction-feature{min-height:220px;padding:24px}
+  .direction-feature h3{margin:52px 0 10px;font-size:27px}
+  .direction-feature p{font-size:14px}
+  .direction-number{width:48px;height:48px;border-radius:16px}
+  .direction-list{display:grid;gap:12px;margin:0}
+  .direction-list article{min-height:auto;padding:22px}
+  .direction-list article>span{margin-bottom:18px}
+  .direction-list h3{font-size:21px}
+  .diagnostic-card{min-height:220px;padding:24px}
+  .diagnostic-card h3{font-size:25px}
+
+  .diagnostics{padding-top:62px}
+  .diagnostic-layout{gap:20px}
+  .foot-visual{min-height:330px;order:2}
+  .animated-foot{width:185px}
+  .orbit-one{width:300px;height:300px}
+  .orbit-two{width:230px;height:340px}
+  .scan-label{right:50%;bottom:7%;transform:translateX(50%)}
+  .check-list{gap:12px;margin:24px 0 0}
+  .check-list li{min-height:auto;padding:20px;border-radius:24px;font-size:17px}
+
+  .faq-layout{gap:26px}
+  .faq-intro p{font-size:15px}
+  .faq-list{gap:10px}
+  .faq-item{border-radius:22px}
+  .faq-item summary{gap:12px;padding:18px 16px;font-size:17px}
+  .faq-item summary span{width:34px;height:34px;border-radius:12px;font-size:11px}
+  .faq-item summary b{width:34px;height:34px}
+  .faq-item p{padding:0 18px 20px 62px;font-size:14px;line-height:1.58}
+
+  .signup-layout{gap:26px}
+  .signup-intro h2{font-size:clamp(38px,11vw,52px)}
+  .signup-intro p{margin-bottom:0}
+  .signup-form{padding:22px 16px;border-radius:26px}
+  .form-row{display:block}
+  .field{margin-bottom:16px}
+  input,select,textarea{min-height:50px;border-radius:16px}
+  .consent{font-size:12px;line-height:1.45}
+  .submit-button{margin-top:16px}
+  .success-box{border-radius:20px}
+
+  .vk{padding:58px 0}
+  .vk-inner{gap:18px}
+  .vk h2{font-size:38px;line-height:1.03}
+  .button-white{width:100%;justify-content:center}
+  footer{padding:52px 0 22px}
+  .footer-grid{gap:26px;padding-bottom:34px}
+  .footer-grid nav{gap:10px}
+}
+
+@media (max-width:380px){
+  .hero{min-height:790px}
+  .hero-copy{padding-bottom:310px}
+  .hero h1{font-size:54px}
+  .hero-photo-motion{height:330px}
+  .button{font-size:14px}
+  .faq-item summary{font-size:16px}
+}
