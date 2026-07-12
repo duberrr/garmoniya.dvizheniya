@@ -294,3 +294,17 @@ section[id]{scroll-margin-top:var(--header-offset,120px)}
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-5px)}
 }
+
+/* Финальная правка стопы: строго вертикальная посадка без бокового наклона. */
+.mobile-menu-only{display:none!important}
+.animated-foot{transform-origin:50% 55%;animation:footFloatStraight 6s var(--ease) infinite!important}
+.toe-top circle{stroke-width:2.6}
+
+@keyframes footFloatStraight{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-12px,0)}
+}
+
+@media (max-width:900px){
+  .site-nav .mobile-menu-only{display:block!important;color:var(--color-deep-teal)}
+}
