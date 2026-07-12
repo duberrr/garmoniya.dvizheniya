@@ -230,3 +230,67 @@ section[id]{scroll-margin-top:var(--header-offset,120px)}
   .button{font-size:14px}
   .faq-item summary{font-size:16px}
 }
+
+/* Финальная правка: реалистичная стопа и ровная мобильная сетка направлений. */
+.animated-foot{width:min(310px,72vw)}
+.foot-shape{fill:rgba(80,175,164,.18);stroke:#77c6bd;stroke-width:2.6;stroke-linejoin:round}
+.toe-top circle{transform-box:fill-box;transform-origin:center}
+.foot-line-secondary{opacity:.62;animation-delay:-1.4s}
+
+@media (max-width:900px){
+  .directions-layout{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+  }
+  .direction-feature,
+  .direction-list,
+  .diagnostic-card{
+    grid-column:1/-1!important;
+    width:100%;
+    max-width:100%;
+    margin:0!important;
+  }
+  .direction-list{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+    padding:0!important;
+    border:0;
+    background:transparent;
+    box-shadow:none;
+    backdrop-filter:none;
+  }
+  .direction-list article{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    border:1px solid rgba(61,102,100,.1);
+    background:rgba(255,255,255,.76);
+    box-shadow:0 18px 46px rgba(41,72,70,.07);
+    overflow:hidden;
+  }
+}
+
+@media (max-width:680px){
+  .hero-actions .text-link{display:none}
+  .directions{overflow:hidden}
+  .directions .section-heading h2{font-size:clamp(38px,12vw,54px);line-height:.95}
+  .directions-layout{gap:12px!important}
+  .direction-feature,
+  .direction-list article,
+  .diagnostic-card{
+    transform:none;
+    animation:directionCardLift 7s var(--ease) infinite;
+  }
+  .direction-list article:nth-child(2n),
+  .direction-feature.alternate{animation-delay:-2.2s}
+  .diagnostic-card{animation-delay:-3.4s}
+  .animated-foot{width:215px}
+  .foot-visual{min-height:360px}
+}
+
+@keyframes directionCardLift{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}
+}
